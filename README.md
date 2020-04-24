@@ -1,50 +1,8 @@
 # password_generator
 
-# 03 JavaScript: Password Generator
+For this assignment, I created a fuctioning password generator in order to generate a randomized combination of characters according to the user's preferences.
+The user's preferences are determined by answers to questions asking if the password should include capital letters, numbers, and/or symbols. By default, the password will include lowercase letters.
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+For the script to work, I first created several arrays that held the possible characters to be used in the password. I then developed a function to write the password including if/else conditional statements that are dependent on the user's preference answers.
 
-If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
-
-## User Story
-
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
-
-The following image demonstrates the application functionality:
-
-![password generator demo](./Assets/03-javascript-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+Lastly, there is a flaw in my code. When the "Generate Password" button is clicked on the first time (on a just refreshed page), the function writePassword and its for loops will work depending on the conditional statements. However, if the page is not refreshed, the conditional statements might be ignored after the initial generated password and, unless the page will refresh, the following passwords will be dependent on the initial answers of the user.
